@@ -1,0 +1,128 @@
+.tab {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 18px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 18px;
+}
+
+.sectionLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.fileInput {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.fileInput input { flex: 1; }
+
+.entriesHeader {
+  display: grid;
+  grid-template-columns: 106px 1fr 32px;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+  padding: 0 2px;
+}
+
+.colAddr {}
+.colFile {}
+
+.entryRow {
+  display: grid;
+  grid-template-columns: 106px 1fr 32px;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.addrInput { width: 100px !important; }
+
+.cliRow {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.cliBox {
+  flex: 1;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 9px 12px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-mono);
+  word-break: break-all;
+  line-height: 1.6;
+  min-height: 40px;
+  user-select: text;
+}
+
+.actions {
+  padding-top: 6px;
+  display: flex;
+  gap: 8px;
+}
+
+.warningBox {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--warn-bg);
+  border: 1px solid color-mix(in srgb, var(--warn) 30%, transparent);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  color: var(--warn);
+}
+
+.warningBox strong {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--warn);
+}
+
+.warningBox p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,19 @@
+.app {
+  display: grid;
+  grid-template-rows: var(--header-h) 1fr var(--statusbar-h);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.body {
+  display: flex;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
