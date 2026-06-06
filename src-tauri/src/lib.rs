@@ -48,7 +48,7 @@ pub struct LogLine {
 
 /// List available serial ports
 #[tauri::command]
-pub fn list_ports() -> Vec<SerialPort> {
+fn list_ports() -> Vec<SerialPort> {
     match serialport::available_ports() {
         Ok(ports) => ports
             .into_iter()
@@ -192,7 +192,7 @@ fn parse_line(line: &str) -> LogLine {
 
 /// Write flash (write_flash command)
 #[tauri::command]
-pub async fn flash(app: AppHandle, args: FlashArgs) -> Result<(), String> {
+async fn flash(app: AppHandle, args: FlashArgs) -> Result<(), String> {
     let mut cmd_args = vec![
         "--port".into(),
         args.port.clone(),
