@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 use std::process::Stdio;
-use tauri::{AppHandle, Emitter, Manager};
+use tauri::{AppHandle, Emitter};
 use tokio::io::{AsyncBufReadExt, BufReader};
 use tokio::process::Command;
 
@@ -219,7 +219,7 @@ async fn flash(app: AppHandle, args: FlashArgs) -> Result<(), String> {
 
 /// Read flash to a file
 #[tauri::command]
-pub async fn read_flash(app: AppHandle, args: ReadArgs) -> Result<(), String> {
+async fn read_flash(app: AppHandle, args: ReadArgs) -> Result<(), String> {
     let mut cmd_args = vec![
         "--port".into(),
         args.port.clone(),
@@ -244,7 +244,7 @@ pub async fn read_flash(app: AppHandle, args: ReadArgs) -> Result<(), String> {
 
 /// Erase entire flash
 #[tauri::command]
-pub async fn erase_flash(
+async fn erase_flash(
     app: AppHandle,
     port: String,
     baud: String,
@@ -261,7 +261,7 @@ pub async fn erase_flash(
 
 /// Get chip info (chip_id command)
 #[tauri::command]
-pub async fn chip_info(
+async fn chip_info(
     app: AppHandle,
     port: String,
     baud: String,
@@ -278,7 +278,7 @@ pub async fn chip_info(
 
 /// Build the CLI command string for display in the UI
 #[tauri::command]
-pub fn build_flash_cmd(args: FlashArgs) -> String {
+fn build_flash_cmd(args: FlashArgs) -> String {
     let mut parts = vec!["esptool.py".to_string()];
 
     parts.push("--port".into());
